@@ -10,13 +10,10 @@ class MainActivity : AppCompatActivity() {
      * Подключение viewBinding в Activity
      */
     private lateinit var binding: ActivityMainBinding
-
     /**
      * Инициализация viewModel
      */
     private lateinit var mainViewModel: MainViewModel
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,15 +26,13 @@ class MainActivity : AppCompatActivity() {
             okResult()
         }
     }
-
+    //Функуия обновления UI
     private fun updateUI() {
         binding.tv.text = mainViewModel.inText
     }
-
+    //Функция получения результата в tv
     private fun okResult() {
         mainViewModel.inText = binding.etInput.text.toString()
         binding.tv.text = mainViewModel.inText
     }
-
-
 }
